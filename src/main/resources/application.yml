@@ -1,0 +1,19 @@
+server:
+  port: 10000
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver  
+    url: jdbc:mysql://localhost:3306/shiro?useSSL=false&characterEncoding=utf8&serverTimezone=UTC&useLegacyDatetimeCode=false
+    username: root
+    password: root
+  thymeleaf:
+    mode: HTML5
+    encoding: UTF-8
+    contents-type: text/html
+    cache: false
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations: mybatis/**/*Mapper.xml
+  typeAliasesPackage: com.example.demo.entityDo
+  

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+ <head>
+ <style type="text/css">
+ .fis_table{
+ border: 1px solid;
+ margin: auto;
+ }
+  .fis_table tr td{
+  text-align: center;
+   border: 1px solid;
+  }
+ .fis_div{
+ width: 100%;
+ margin:auto;
+ text-align: center;
+ }
+ .spanred{
+ color: red;
+ }
+ </style>
+<meta charset="UTF-8">
+</head>
+<body>
+	<div class="fis_div">
+		<p>当前登录用户             <span th:text="${session.admin}" class="spanred"></span>  <a href="#">退出登录</a></p>
+		<table class="fis_table">
+		<tr>	
+			<td>用户名</td>
+			<td>科目</td>
+			<td>操作</td>
+		</tr>
+			<tr th:each="user : ${userlist}">			
+				<td th:text="${user.nickname}"></td>							
+				<td th:text="${user.subject.subjectName}"></td>
+				<td><a href="#">查看</a> <a href="#">修改</a> <a href="#">删除</a></td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>
